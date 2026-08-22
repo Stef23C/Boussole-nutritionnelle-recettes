@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens shadcn/ui (schema HSL "H S% L%", senza hsl() — richiesto
+   dal modo in cui tailwind.config.ts li referenzia con hsl(var(--x))).
+   Palette calda neutra con un accento verde salvia (coerente col tema
+   "naturopatia/nutrizione"), non il viola/blu di default shadcn. */
+@layer base {
+  :root {
+    --background: 40 30% 98%;
+    --foreground: 100 12% 14%;
+
+    --card: 40 30% 100%;
+    --card-foreground: 100 12% 14%;
+
+    --primary: 130 24% 32%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 100 12% 14%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 100 8% 42%;
+
+    --accent: 300 16% 40%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 6 72% 45%;
+    --destructive-foreground: 40 30% 98%;
+
+    --border: 40 16% 85%;
+    --input: 40 16% 85%;
+    --ring: 130 24% 32%;
+
+    --radius: 0.65rem;
+
+    /* colori semantici per macro/micro-nutrienti, usati dalle progress bar */
+    --nutrient-calories: 28 78% 48%;
+    --nutrient-protein: 210 60% 45%;
+    --nutrient-carbs: 40 70% 45%;
+    --nutrient-fat: 300 30% 45%;
+    --nutrient-fiber: 130 30% 38%;
+    --nutrient-sodium: 6 55% 48%;
+  }
+
+  .dark {
+    --background: 100 14% 9%;
+    --foreground: 40 20% 92%;
+
+    --card: 100 12% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --primary: 130 30% 62%;
+    --primary-foreground: 100 14% 9%;
+
+    --secondary: 100 10% 18%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 100 10% 18%;
+    --muted-foreground: 40 10% 65%;
+
+    --accent: 300 20% 68%;
+    --accent-foreground: 100 14% 9%;
+
+    --destructive: 6 60% 55%;
+    --destructive-foreground: 40 20% 92%;
+
+    --border: 100 10% 22%;
+    --input: 100 10% 22%;
+    --ring: 130 30% 62%;
+
+    --nutrient-calories: 28 70% 60%;
+    --nutrient-protein: 210 55% 62%;
+    --nutrient-carbs: 40 60% 58%;
+    --nutrient-fat: 300 26% 62%;
+    --nutrient-fiber: 130 26% 55%;
+    --nutrient-sodium: 6 50% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
